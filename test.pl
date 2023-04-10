@@ -1,12 +1,13 @@
 keywords([    [mother, father, family, siblings, brother, sister, aunty, uncle]-'Tell me more about your family', 
-    [school, education, learn]- 'Tell me about school', 
-    [depressed, sad, unhappy]-'What is making you depressed', 
-    [work, job, career]-'What feels like too much work?', 
+    [stress, anxious, anxiety, worry, worried]- 'I am sorry to hear that. can you share what makes you feel this way?', 
+    [depressed, sad, unhappy]-'What do you think is causing your sadness?', 
+    [work, assignment, homework, career]-'Have you noticed any changes to your mood when working on assignments?',  
     [elderberry, fruit]-'There is an elderberry',
     ['good job', 'well done']-'Thank you! Let\'s continue:',
     [relationship, partner, spouse]-'What\'s going on in your relationship?'
 ]).
 
+%predicate to check if the keyword is in the response
 contains_keyword(Input, Response) :-
     % Get the list of keywords
     keywords(Keywords),
@@ -17,12 +18,6 @@ contains_keyword(Input, Response) :-
     member(Keyword, KeywordList),
     sub_atom(LowercaseInput, _, _, _, Keyword).
 
-% Predicate to start a conversation with the user
-conversation :-
-    % Prompt the user for input
-    write('Hello, how can I assist you today? '),nl,
-    % Call the helper predicate to handle the user input
-    get_user_input.
 
 % Predicate to handle the user input
 get_user_input :-
@@ -43,6 +38,15 @@ get_user_input :-
               ; (write('I see, please continue..'),nl, get_user_input)
            )
       ).
+
+
+% Predicate to start a conversation with the user
+conversation :-
+    % Prompt the user for input
+    write('Hello, how can I assist you today? '),nl,
+    % Call the helper predicate to handle the user input
+    get_user_input.
+
 
 % Start the program by calling the conversation predicate
 :- initialization(conversation).
