@@ -1,21 +1,20 @@
-% Define a list of keywords with corresponding responses
-keywords([mother-'Tell me more about your family', 
-          school-'Tell me about school', 
-          depressed-'What is making you depressed', 
-          work-'What feels like too much work?', 
-          elderberry-'There is an elderberry',
-          'good job' - 'Thank You! Lets Continue:',
-          relationship - 'What`s going on in your relationship?'
-        ]).
+keywords([    [mother, father, family, siblings, brother, sister, aunty, uncle]-'Tell me more about your family', 
+    [school, education, learn]- 'Tell me about school', 
+    [depressed, sad, unhappy]-'What is making you depressed', 
+    [work, job, career]-'What feels like too much work?', 
+    [elderberry, fruit]-'There is an elderberry',
+    ['good job', 'well done']-'Thank you! Let\'s continue:',
+    [relationship, partner, spouse]-'What\'s going on in your relationship?'
+]).
 
-% Predicate to check if a keyword is in the user input
 contains_keyword(Input, Response) :-
     % Get the list of keywords
     keywords(Keywords),
     % Convert the input to lowercase
     downcase_atom(Input, LowercaseInput),
-    % Check if any keyword is a substring of the lowercase input
-    member(Keyword-Response, Keywords),
+    % Check if any keyword list contains a substring of the lowercase input
+    member(KeywordList-Response, Keywords),
+    member(Keyword, KeywordList),
     sub_atom(LowercaseInput, _, _, _, Keyword).
 
 % Predicate to start a conversation with the user
