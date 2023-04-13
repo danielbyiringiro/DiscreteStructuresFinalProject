@@ -1,0 +1,30 @@
+Brief Code Description.
+
+To implement a simple psychaiatrist chatbot in prologue we used the following procedure.
+
+First we defined an association list for groups of keywords and their responses
+e.g 
+keywords([ [keyword a, keyword b] - 'Response',
+		[keyword c, keyword d] - 'Response' ])
+
+
+Predicate 1: (keyword_match(Input,Response))
+
+then we created a predicate 'keyword match',which takes 2 parameters that are 'input' and 'responses'
+The predicate first retireves the keyword list defined above. It then converts the input string into lowercase so that the keyword detection is case insensitive.
+we then retrieve the keyword Lists and their respective responses from the keyword list.
+Then we retrive each keyword from the keywords list
+then using the sub_atom command we check if a keyword is a substring of the user input. If a keyword is found the appropriate response is assigned to the response parameter.
+
+
+Predicate 2: (process_response)
+
+the process response predicate was used to get the user input, check for keywords and then continue or terminate the conversation. First the user input was collected using 
+the 'readln' command. the input was then joined together as a single string. next the keyword_match predicate was called and the input was passed as a parameter. using conditionals, if there was a keyword match the appropriate response was displayed to the user and then the 'process_response' predicate was recursively called to repeat the process. If a keyword was not found another conditional check was used to determine if the user's input was 'goodbye'. If it was 'goodbye' the conversation is terminated or else the program asks the user for more information till it detects a keyword.
+
+Predicate 3: (begin_conversation)
+This is the main predicate of code. This predicate initiates the psychiatrist program by first prompting the user to enter input. it then calls the process response predicate to handle the input and continue the conversation
+
+
+
+
