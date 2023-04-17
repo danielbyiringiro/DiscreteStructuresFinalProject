@@ -84,7 +84,7 @@ process_response :-
         -> write(Response), nl,
            % call the process response predicate recursively to get continue conversation
            process_response
-        ; (% If no keyword was found, check for "goodbye" to end conversation print phrase and continue conversation
+        ; (% If no keyword was found, check for "goodbye" to end conversation or else ask for more input
             downcase_atom(N_Input, Lower_N_Input),
             sub_atom(Lower_N_Input, _, _, _, "goodbye")
                 % end conversation if goodbye is found
