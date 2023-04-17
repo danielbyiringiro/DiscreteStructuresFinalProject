@@ -7,13 +7,16 @@
 
 % define keywords and corresponding responses using an association list
 keywords([    [mother, father, mom , dad, mum, mummy, daddy, papa, mama]-"Tell me more about your relationship with your parents",
+    [hello, hi, hey, "good morning" , "good evening" , "good afternoon"] - "Hey there! how are you doing?",
     ["don't like him", "don't love them", "don't like her", "don't like them" , "annoying me", "makes me angry"]- "Do they do anything in particular to make you feel this way?",
     ["love him", "love her", "love them", "in love with", "like her", "like them", "like him"]- "Sounds like they mean a lot to you! Good relationships are very healthy. Tell me more about them",
     [brother, sister, siblings]- "What is your relationship with your siblings like?",
+    ["i am doing great"]-"Awesome. I am all ears.",
+    [""]-"It is okay if you don't want to talk yet",
     ["i'm fine", "i'm good" , "i'm well"]- "Glad to hear it! So what's going on with you lately",
-    [friend, bestie] - "Tell me more about your friends",
+    [friend, friends, bestie] - "Tell me more about your friends",
     [family, aunt, auntie, uncle, cousins] - "Oh tell me more about your extended family",
-    [stress, anxious, anxiety, worry, worried, afraid,stressed]- "I am sorry to hear that. can you share what makes you feel this way?", 
+    [stress, anxious, anxiety, worry, worried, afraid,stressed]- "I am sorry to hear that. Can you share what makes you feel this way?", 
     [depressed, sad, unhappy, depression]-"What do you think is  causing your sadness?", 
     [work, assignment, homework, career]-"Have you noticed any changes to your mood when working on assignments?",  
     ["i hate school", "class is boring", "i don't understand"]- "I know it's difficult but having a more positive mindset is everything",
