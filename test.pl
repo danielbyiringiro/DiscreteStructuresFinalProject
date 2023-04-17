@@ -7,7 +7,6 @@
 
 % define keywords and corresponding responses using an association list
 keywords([    [mother, father, mom , dad, mum, mummy, daddy, papa, mama]-"Tell me more about your relationship with your parents",
-    [hello, hi, hey, "good morning" , "good evening" , "good afternoon"] - "Hey there! how are you doing?",
     ["don't like him", "don't love them", "don't like her", "don't like them" , "annoying me", "makes me angry"]- "Do they do anything in particular to make you feel this way?",
     ["love him", "love her", "love them", "in love with", "like her", "like them", "like him"]- "Sounds like they mean a lot to you! Good relationships are very healthy. Tell me more about them",
     [brother, sister, siblings]- "What is your relationship with your siblings like?",
@@ -26,6 +25,23 @@ keywords([    [mother, father, mom , dad, mum, mummy, daddy, papa, mama]-"Tell m
     [harrassed, harrass, inappropriate, "sexual harrassment", "forced himself on", "forced herself on", "not consensual", "i did'nt consent"]- "You're not alone. Have you sought or reported any such incidents?"
 ]).
 
+% keywords for if theres no response
+no_response_keywords(["I see, please continue..","Interesting. Tell me more", "Okay. Go on", "Okay what else"]).
+
+
+% predicate to get a response if no keyword is provided
+no_key_response :-
+    % Get the list of strings
+    no_response_keywords(List),
+    % Get the length of the list
+    length(List, Length),
+    % Generate a random index between 1 and the length of the list
+    random(1, Length, Index),
+    % Get the string at the random index
+    nth1(Index, List, Response),
+    % print the response
+    write(Response).
+
 
 % this is a predicate that checks if the users input contains a keyword and gets the appropriate response
 keyword_match(Input, Response) :-
@@ -38,11 +54,15 @@ keyword_match(Input, Response) :-
     % fetch the keywords from keywords list
     member(Keyword, KeywordList),
     % check if the keyword is a substring of the input
-    sub_atom(L_input, _, _, _, Keyword). 
+    sub_atom(L_input, _, _, _, Keyword).
+
+
 
 
 
 process_response :-
+    % prompt
+    write('> '),
     % get the user input as list of strings
     readln(Input),
     % join the list of strings together as a single string
@@ -59,7 +79,7 @@ process_response :-
                 % end conversation if goodbye is found
                 -> write("See you later :)"), nl
                 % ask user to continue conversation
-                ; (write("Interesting, Tell me more"),nl, process_response)
+                ; (no_key_response,nl, process_response)
         )
     ).
 
