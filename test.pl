@@ -33,7 +33,7 @@ keywords([[mother, father, mom , dad, mum, mummy, daddy, papa, mama]-"Tell me mo
     [suicide, "kill myself","i want to die" ] - "Death is not the solution, have you tried reaching out to friends or loved ones ?",
     [harrassed, harrass]- "Have you sought for help or reported any such incidents?",
     ["sexual harrassment", "forced himself on", "forced herself on","not consensual", "i did'nt consent" ] - "Can you tell me more about the situation or experience where you felt that you didn't consent or someone forced themselves on you?",
-    [inappropriate] - "Please explain what happened"t 
+    [inappropriate] - "Please explain what happened" 
 ]).
 
 % keywords for if theres no response
