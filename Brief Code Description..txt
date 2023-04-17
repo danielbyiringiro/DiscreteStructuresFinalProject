@@ -20,7 +20,7 @@ then using the sub_atom command we check if a keyword is a substring of the user
 Predicate 2: (process_response)
 
 the process response predicate was used to get the user input, check for keywords and then continue or terminate the conversation. First the user input was collected using 
-the 'readln' command. the input was then joined together as a single string. next the keyword_match predicate was called and the input was passed as a parameter. using conditionals, if there was a keyword match the appropriate response was displayed to the user and then the 'process_response' predicate was recursively called to repeat the process. If a keyword was not found another conditional check was used to determine if the user's input was 'goodbye'. If it was 'goodbye' the conversation is terminated or else the program asks the user for more information till it detects a keyword.
+the 'readln' command. next the keyword_match predicate was called and the input was passed as a parameter. using conditionals, if there was a keyword match the appropriate response was displayed to the user and then the 'process_response' predicate was recursively called to repeat the process. If a keyword was not found another conditional check was used to determine if the user's input was 'goodbye'. If it was 'goodbye' the conversation is terminated or else the program asks the user for more information till it detects a keyword.
 
 Predicate 3: (begin_conversation)
 This is the main predicate of code. This predicate initiates the psychiatrist program by first prompting the user to enter input. it then calls the process response predicate to handle the input and continue the conversation
