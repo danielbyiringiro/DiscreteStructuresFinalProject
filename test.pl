@@ -7,25 +7,33 @@
 
 % define keywords and corresponding responses using an association list
 keywords([    [mother, father, mom , dad, mum, mummy, daddy, papa, mama]-"Tell me more about your relationship with your parents",
+    [hello, hi, hey, "good morning" , "good evening" , "good afternoon"] - "Hey there! how are you doing?",
     ["don't like him", "don't love them", "don't like her", "don't like them" , "annoying me", "makes me angry"]- "Do they do anything in particular to make you feel this way?",
     ["love him", "love her", "love them", "in love with", "like her", "like them", "like him"]- "Sounds like they mean a lot to you! Good relationships are very healthy. Tell me more about them",
     [brother, sister, siblings]- "What is your relationship with your siblings like?",
     ["i am doing great"]-"Awesome. I am all ears.",
-    ["     "]-"It is okay if you don't want to talk yet",
+    [""]-"It is okay if you don't want to talk yet",
     ["i'm fine", "i'm good" , "i'm well"]- "Glad to hear it! So what's going on with you lately",
     [friend, friends, bestie] - "Tell me more about your friends",
     [family, aunt, auntie, uncle, cousins] - "Oh tell me more about your extended family",
-    [stress, anxious, anxiety, worry, worried, afraid,stressed]- "I am sorry to hear that. Can you share what makes you feel this way?", 
-    [depressed, sad, unhappy, depression]-"What do you think is  causing your sadness?", 
-    [work, assignment, homework, career]-"Have you noticed any changes to your mood when working on assignments?",  
-    ["i hate school", "class is boring", "i don't understand"]- "I know it's difficult but having a more positive mindset is everything",
-    [hate, anger, stupid]-"What's making you feel this way?. Talking about it helps a lot :)",
+    [stress, anxious, anxiety, worry, worried, afraid,stressed]- "I am sorry to hear that. can you share what makes you feel this way?", 
+    [depressed,depression]-"What do you think is  causing your depression?", 
+    [sad, unhappy] - "I am sorry to hear that. can you share what makes you feel this way?",
+    [assignment, homework, assignments]-"Have you noticed any changes to your mood when working on assignments?", 
+    [work, career] - "What is going on at work?",
+    ["i hate school", "class is boring", "i don't understand"]- "I know it's difficult but having a more positive mindset is everything and can be more helpful",
+    [anger]-"What makes you feel angry?",
+    [stupid] - "Why do you think you're stupid?",
+    [hate] - "Why do you hate it?",
     ["good job", "well done"]-"Thank you! Let's continue:",
-    [relationship, partner, girlfriend, boyfriend]-"What's going on in your relationship?",
-    [drugs, alcohol, weed, cocaine, smoking, "i like being high"]- "At what times do you feel the urge to take these things?",
-    [suicide, "i want to die", "life is pointless", "kill myself" , "take my life"]- "What makes you feel this way?. Also you're very much appreciated and you can always reach out for help. ", 
-    [harrassed, harrass, inappropriate, "sexual harrassment", "forced himself on", "forced herself on", "not consensual", "i did'nt consent"]- "You're not alone. Have you sought or reported any such incidents?"
-]).
+    [boyfriend, girlfriend]-"What's going on in your relationship?",
+    [partner, spouse]-"What's going on in your marriage?",
+    [drugs,alcohol, weed, cocaine, smoking, "i like being high"]- "At what times do you feel the urge to take these things?",
+    ["life is pointless","take my life"]- "What makes you feel this way?. Also you're very much appreciated and you can always reach out for help. ", 
+    [suicide, "kill myself","i want to die" ] - "Death is not the solution, have you tried reaching out to friends or loved ones ?",
+    [harrassed, harrass]- "Have you sought for help or reported any such incidents?",
+    ["sexual harrassment", "forced himself on", "forced herself on","not consensual", "i did'nt consent" ] - "Can you tell me more about the situation or experience where you felt that you didn't consent or someone forced themselves on you?",
+    [inappropriate] - "Please explain what happened",]).
 
 % keywords for if theres no response
 no_response_keywords(["I see, please continue..","Interesting. Tell me more", "Okay. Go on", "Okay what else"]).
