@@ -21,8 +21,9 @@ keywords([[mother, father, mom , dad, mum, mummy, daddy, papa, mama]-"Tell me mo
     [assignment, homework, assignments]-"Have you noticed any changes to your mood when working on assignments?", 
     [work, career] - "What is going on at work?",
     ["i hate school", "class is boring", "i don't understand"]- "I know it's difficult but having a more positive mindset is everything and can be more helpful",
-    [anger]-"What makes you feel angry?",
+    [anger, angry]-"What makes you feel angry?",
     [stupid] - "Why do you think you're stupid?",
+    [deadline, deadlines] - "What do you think cause you to work when deadlines are near?",
     [hate] - "Why do you hate it?",
     ["good job", "well done"]-"Thank you! Let's continue:",
     [boyfriend, girlfriend]-"What's going on in your relationship?",
@@ -32,7 +33,7 @@ keywords([[mother, father, mom , dad, mum, mummy, daddy, papa, mama]-"Tell me mo
     [suicide, "kill myself","i want to die" ] - "Death is not the solution, have you tried reaching out to friends or loved ones ?",
     [harrassed, harrass]- "Have you sought for help or reported any such incidents?",
     ["sexual harrassment", "forced himself on", "forced herself on","not consensual", "i did'nt consent" ] - "Can you tell me more about the situation or experience where you felt that you didn't consent or someone forced themselves on you?",
-    [inappropriate] - "Please explain what happened"
+    [inappropriate] - "Please explain what happened"t 
 ]).
 
 % keywords for if theres no response
