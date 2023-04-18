@@ -7,7 +7,6 @@
 
 % define keywords and corresponding responses using an association list
 keywords([[mother, father, mom , dad, mum, mummy, daddy, papa, mama]-"Tell me more about your relationship with your parents",
-    [hello, hi, hey, "good morning" , "good evening" , "good afternoon"] - "Hey there! how are you doing?",
     ["don't like him", "don't love them", "don't like her", "don't like them" , "annoying me", "makes me angry"]- "Do they do anything in particular to make you feel this way?",
     ["love him", "love her", "love them", "in love with", "like her", "like them", "like him"]- "Sounds like they mean a lot to you! Good relationships are very healthy. Tell me more about them",
     [brother, sister, siblings]- "What is your relationship with your siblings like?",
@@ -33,7 +32,8 @@ keywords([[mother, father, mom , dad, mum, mummy, daddy, papa, mama]-"Tell me mo
     [suicide, "kill myself","i want to die" ] - "Death is not the solution, have you tried reaching out to friends or loved ones ?",
     [harrassed, harrass]- "Have you sought for help or reported any such incidents?",
     ["sexual harrassment", "forced himself on", "forced herself on","not consensual", "i did'nt consent" ] - "Can you tell me more about the situation or experience where you felt that you didn't consent or someone forced themselves on you?",
-    [inappropriate] - "Please explain what happened"
+    [inappropriate] - "Please explain what happened",
+    [hello, hi, hey, "good morning" , "good evening" , "good afternoon"] - "Hey there! how are you doing?"
 ]).
 
 % keywords for if theres no response
@@ -86,7 +86,7 @@ process_response :-
            process_response
         ; (% If no keyword was found, check for "goodbye" to end conversation or else ask for more input
             downcase_atom(N_Input, Lower_N_Input),
-            sub_atom(Lower_N_Input, _, _, _, "goodbye")
+            Lower_N_Input = 'goodbye'
                 % end conversation if goodbye is found
                 -> write("See you later :)"), nl
                 % ask user to continue conversation
