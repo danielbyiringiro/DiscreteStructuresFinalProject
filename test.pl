@@ -33,7 +33,17 @@ keywords([[mother, father, mom , dad, mum, mummy, daddy, papa, mama]-"Tell me mo
     [suicide, "kill myself","i want to die" ] - "Death is not the solution, have you tried reaching out to friends or loved ones ?",
     [harrassed, harrass]- "Have you sought for help or reported any such incidents?",
     ["sexual harrassment", "forced himself on", "forced herself on","not consensual", "i did'nt consent" ] - "Can you tell me more about the situation or experience where you felt that you didn't consent or someone forced themselves on you?",
-    [inappropriate] - "Please explain what happened" 
+    [inappropriate] - "Please explain what happened",
+    [anorexia, bulimia, eating disorder] - "Can you tell me more about your relationship with food and how it affects your daily life?",
+    [insomnia, sleep, tired, fatigue] - "How many hours of sleep do you get each night? Have you noticed any changes in your sleep patterns?",
+    [medication, prescription, pills] - "Are you currently taking any medication? If so, how do you feel it is affecting you?",
+    [trauma, PTSD, abuse, assault] - "It takes a lot of courage to speak up about trauma. Can you tell me more about what happened and how it has affected you?",
+    [self-harm, cutting, suicidal thoughts, suicide attempts] - "I'm here to support you through this difficult time. Have you ever talked to a therapist or counselor about these thoughts and feelings?",
+    [panic attack, anxiety attack] - "I'm sorry to hear that you're experiencing panic attacks. Can you tell me more about what triggers them?",
+    [OCD, obsessive-compulsive disorder] - "OCD can be very distressing. Can you tell me more about your compulsions and how they affect your daily life?",
+    [phobia, fear, anxiety] - "Facing your fears can be challenging, but it's important to take small steps towards overcoming them. What steps have you taken so far?",
+    [loneliness, isolated, social anxiety] - "Feeling lonely or isolated can be difficult, but there are ways to connect with others. Have you considered joining any social groups or clubs?",
+    [relationship problems, marriage problems] - "Relationship problems can be very distressing. Can you tell me more about what's been going on in your relationship/marriage?"
 ]).
 
 % keywords for if theres no response
@@ -66,10 +76,6 @@ keyword_match(Input, Response) :-
     member(Keyword, KeywordList),
     % check if the keyword is a substring of the input
     sub_atom(L_input, _, _, _, Keyword).
-
-
-
-
 
 process_response :-
     % prompt
