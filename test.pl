@@ -43,11 +43,11 @@ keywords([[mother, father, mom , dad, mum, mummy, daddy, papa, mama]-"Tell me mo
     [phobia, fear, anxiety]- "Facing your fears can be challenging, but it's important to take small steps towards overcoming them. What steps have you taken so far?",
     [loneliness, isolated, "social anxiety"]- "Feeling lonely or isolated can be difficult, but there are ways to connect with others. Have you considered joining any social groups or clubs?",
     ["relationship problems", "marriage problems"]- "Relationship problems can be very distressing. Can you tell me more about what's been going on in your relationship/marriage?",
-    [hi, hello, "good morning", "good morning","good afternoon", "good evening"]- "Hey there, what's up?"
+    [hello, "good morning", "good morning","good afternoon", "good evening"]- "Hey there, what's up?"
 ]).
 
 % keywords for if theres no response
-no_response_keywords(["I see, please continue..","Interesting. Tell me more", "Okay. Go on", "Okay what else"]).
+no_response_keywords(["I see, please continue..","Interesting. Tell me more", "Okay. Go on", "Okay what else?"]).
 
 
 % predicate to get a response if no keyword is provided
