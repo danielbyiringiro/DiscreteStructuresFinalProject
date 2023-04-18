@@ -79,7 +79,7 @@ keyword_match(Input, Response) :-
 
 
 
-
+% predicate to receive user input and return appropriate response
 process_response :-
     % prompt
     write('> '),
@@ -97,7 +97,7 @@ process_response :-
             downcase_atom(N_Input, Lower_N_Input),
             Lower_N_Input = 'goodbye'
                 % end conversation if goodbye is found
-                -> write("See you later :)"), nl
+                -> write("It was nice speaking with you! See you later :)"), nl
                 % ask user to continue conversation
                 ; (no_key_response,nl, process_response)
         )
