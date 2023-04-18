@@ -7,7 +7,6 @@
 
 % define keywords and corresponding responses using an association list
 keywords([[mother, father, mom , dad, mum, mummy, daddy, papa, mama]-"Tell me more about your relationship with your parents",
-    [hello, hi, hey, "good morning" , "good evening" , "good afternoon"] - "Hey there! how are you doing?",
     ["don't like him", "don't love them", "don't like her", "don't like them" , "annoying me", "makes me angry"]- "Do they do anything in particular to make you feel this way?",
     ["love him", "love her", "love them", "in love with", "like her", "like them", "like him"]- "Sounds like they mean a lot to you! Good relationships are very healthy. Tell me more about them",
     [brother, sister, siblings]- "What is your relationship with your siblings like?",
@@ -92,7 +91,7 @@ process_response :-
            process_response
         ; (% If no keyword was found, check for "goodbye" to end conversation or else ask for more input
             downcase_atom(N_Input, Lower_N_Input),
-            sub_atom(Lower_N_Input, _, _, _, "goodbye")
+            Lower_N_Input = 'goodbye'
                 % end conversation if goodbye is found
                 -> write("See you later :)"), nl
                 % ask user to continue conversation
