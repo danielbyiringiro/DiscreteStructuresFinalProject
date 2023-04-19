@@ -110,6 +110,13 @@ process_response :-
 % this predicate begins a conversation with the user
 begin_conversation :-
     % begin the conversation 
+    write('Hello! Welcome to Prolog Psychiatrist version 1.0'),nl,
+    write("                      Rules                         "),nl,
+    write("===================================================="),nl,
+    write("When you see the '>' you can enter input"),nl,
+    write("To end the conversation at any point type 'goodbye'"),nl,
+    write("Let's Begin"),nl,
+    write("===================================================="),nl,nl,
     write("Hey there! I am the Prolog Psychiatrist. What's going on with you?"),nl,
     % call the process response predicate 
     process_response.
